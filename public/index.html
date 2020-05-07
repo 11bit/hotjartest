@@ -19,13 +19,23 @@
                 overflow: scroll;
                 border: 3px gray dashed;
             }
+            .inner {
+                width: 3456px;
+                height: 2458px;
+            }
         </style>
+
     </head>
     <body>
-        <div class="container">
+        <div class="container" id="scrollable">
             <div class="inner">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Rocky_Mountain_National_Park_in_September_2011_-_Glacier_Gorge_from_Bear_Lake.JPG" />
             </div>
         </div>
     </body>
+
+    <script>
+        const scrollable = document.getElementById('scrollable');
+        scrollable.scrollTo(1200, 1000);
+    </script>
 </html>
