@@ -36,9 +36,20 @@
 
     <script>
         const scrollable = document.getElementById('scrollable');
+        const hjLastInitTime = sessionStorage.getItem('_hjRecordingLastActivity');
 
-        setTimeout(() => {
-            scrollable.scrollTo(1200, 1000);
-        }, 10000)
+        scrollable.scrollTo(1200, 1000);
+
+
+        setInterval(() => {
+            if (sessionStorage.getItem('_hjRecordingLastActivity') !== hjLastInitTime) {
+                console.log("HOTJAR REINIT DETECTED");
+
+                scrollable.scrollTo(scrollable.scrollTop, scrollable.scrollLeft)
+            }
+        }, 1000)
+
+
+
     </script>
 </html>
