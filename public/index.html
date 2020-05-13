@@ -41,11 +41,12 @@
         scrollable.scrollTo(1200, 1000);
 
 
-        setInterval(() => {
+        const intr = setInterval(() => {
             if (sessionStorage.getItem('_hjRecordingLastActivity') !== hjLastInitTime) {
                 console.log("HOTJAR REINIT DETECTED");
 
-                scrollable.scrollTo(scrollable.scrollTop, scrollable.scrollLeft)
+                scrollable.scrollTo(scrollable.scrollLeft, scrollable.scrollTop)
+                clearInterval(intr);
             }
         }, 1000)
 
