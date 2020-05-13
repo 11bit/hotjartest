@@ -46,7 +46,8 @@
             if (sessionStorage.getItem('_hjRecordingLastActivity') !== hjLastInitTime) {
                 console.log("HOTJAR REINIT DETECTED");
 
-                scrollable.scrollTo(scrollable.scrollLeft + 1, scrollable.scrollTop + 1)
+                scrollable.scrollTo(scrollable.scrollLeft + 1, scrollable.scrollTop)
+                scrollable.scrollTo(scrollable.scrollLeft - 1, scrollable.scrollTop)
                 clearInterval(intr);
             }
         }, 1000)
