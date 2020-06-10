@@ -15,42 +15,56 @@
         <style type="text/css" media="screen">
             .container {
                 width: 400px;
-                height: 400px;
+                height: 3000px;
                 overflow: scroll;
                 border: 3px gray dashed;
+
+
             }
             .inner {
-                width: 3456px;
-                height: 2458px;
+                margin-top: 500px;
+                width: 100%;
+                height: 300px;
+                background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3e/Rocky_Mountain_National_Park_in_September_2011_-_Glacier_Gorge_from_Bear_Lake.JPG");
+                background-attachment: fixed;
             }
         </style>
 
     </head>
     <body>
-        <div class="container" id="scrollable">
-            <div class="inner">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Rocky_Mountain_National_Park_in_September_2011_-_Glacier_Gorge_from_Bear_Lake.JPG" />
-            </div>
-        </div>
+        <button id="open">Open all</button>
     </body>
 
     <script>
-        const scrollable = document.getElementById('scrollable');
-        const hjLastInitTime = sessionStorage.getItem('_hjRecordingLastActivity');
 
-        scrollable.scrollTo(1200, 1000);
+    document.getElementById('open').addEventListener('click', () => {
+        window.open('./2.html');
+        window.open('./3.html');
+        window.open('./4.html');
 
+    })
+//         const scrollable = document.getElementById('scrollable');
+//         const hjLastInitTime = sessionStorage.getItem('_hjRecordingLastActivity');
+//
+//         scrollable.scrollTo(1200, 1000);
+//         scrollable.scrollLeft = 1200
+//         scrollable.scrollTop = 1000
 
-        const intr = setInterval(() => {
-            console.log(hjLastInitTime, sessionStorage.getItem('_hjRecordingLastActivity'))
-            if (sessionStorage.getItem('_hjRecordingLastActivity') !== hjLastInitTime) {
-                console.log("HOTJAR REINIT DETECTED");
-
-                scrollable.scrollTo(scrollable.scrollLeft + 1, scrollable.scrollTop)
-                scrollable.scrollTo(scrollable.scrollLeft - 1, scrollable.scrollTop)
-                clearInterval(intr);
-            }
-        }, 1000)
+//         document.addEventListener('scroll', () => {
+//             console.log('scrolled')
+//         }, true);
+//
+//         const intr = setInterval(() => {
+//             console.log(hjLastInitTime, sessionStorage.getItem('_hjRecordingLastActivity'))
+//             if (sessionStorage.getItem('_hjRecordingLastActivity') !== hjLastInitTime) {
+//                 console.log("HOTJAR REINIT DETECTED");
+//
+//                 // scrollable.scrollTo(scrollable.scrollLeft, scrollable.scrollTop)
+//                 scrollable.scrollTo(scrollable.scrollLeft, scrollable.scrollTop)
+//                 // scrollable.scrollTo(scrollable.scrollLeft - 1, scrollable.scrollTop)
+//                 clearInterval(intr);
+//             }
+//         }, 1000)
 
 
 
